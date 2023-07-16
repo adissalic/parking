@@ -8,7 +8,7 @@ const Tuzla = () => {
   const [text, setText] = useState("Unesite vaše registarske oznake");
 
   useEffect(() => {
-    if(localStorage.getItem("Plate")){
+    if (localStorage.getItem("Plate")) {
       setText(localStorage.getItem("Plate"));
       console.log(text);
     }
@@ -21,15 +21,15 @@ const Tuzla = () => {
         <p className={classes.title}>TUZLA</p>
         <h4>1 SAT</h4>
         <div className={classes.options + " options"}>
-          <Link to={"sms:+387833510;&body=" + text}>ZONA 0</Link>
-          <Link to={"sms:+387833511;&body=" + text}>ZONA 1</Link>
-          <Link to={"sms:+387833512;&body=" + text}>ZONA 2</Link>
+          <Link to={"sms:+387833510:&body=" + text}>ZONA 0</Link>
+          <Link to={"sms:+387833511:&body=" + text}>ZONA 1</Link>
+          <Link to={"sms:+387833512:&body=" + text}>ZONA 2</Link>
         </div>
         <h4>DNEVNA</h4>
         <div className={classes.options + " options"}>
-          <Link to={"sms:+387833513;&body=" + text}>ZONA 0</Link>
-          <Link to={"sms:+387833514;&body=" + text}>ZONA 1</Link>
-          <Link to={"sms:+387833515:?&body=" + text}>ZONA 2</Link>
+          <Link to={"sms:+387833513:&body=" + text}>ZONA 0</Link>
+          <Link to={"sms:+387833514:?&body=" + text}>ZONA 1</Link>
+          <Link to={"sms:+387833515;?&body=" + text}>ZONA 2</Link>
         </div>
         <p className="footer">mojparking.ba</p>
       </div>
