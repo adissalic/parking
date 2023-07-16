@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
-
+import "./App.css";
 
 // import Auth from "./pages/Auth";
 import { AuthContext } from "./context/auth-context";
@@ -11,11 +10,11 @@ import { useAuth } from "./hooks/auth-hook";
 import MainPage from "./pages/MainPage";
 import FastPay from "./pages/FastPay";
 import Tuzla from "./pages/Tuzla";
-
+import Footer from "./components/Footer";
+import BackDrop from "./components/BackDrop";
 
 const App = () => {
   const { token, login, logout, userId } = useAuth();
-
   let routes;
   if (token) {
     routes = (
@@ -31,7 +30,7 @@ const App = () => {
       <>
         <Route path="/" exact element={<MainPage />} />
         <Route path="/fastpay" exact element={<FastPay />} />
-        <Route path="/tuzla" exact element={<Tuzla/>} />
+        <Route path="/tuzla" exact element={<Tuzla />} />
       </>
     );
   }
@@ -47,9 +46,11 @@ const App = () => {
       }}
     >
       <Router>
-        <main>
+        <main className="App">
+          <BackDrop />
           <Routes>{routes}</Routes>
         </main>
+        <Footer />
       </Router>
     </AuthContext.Provider>
   );

@@ -4,18 +4,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.main a {
-  color: var(--text-color);
-  display: flex;
-  width: 5%;
-  padding-left: 10%;
-  justify-content: flex-start;
-  align-items: center;
-  position: absolute;
-  top: 7%;
-  left: 5%;
-  z-index: 1;
-}
+
 .main h4 {
   justify-content: center;
   font-family: var(--primaryFont);

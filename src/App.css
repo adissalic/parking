@@ -39,6 +39,7 @@ body {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+
 .title {
   position: absolute;
   top: 7%;
@@ -79,7 +80,18 @@ a img {
   border: 1px solid var(--menu);
 }
 .footer {
+  color: var(--menu);
   font-family: var(--footerFont);
   position: absolute;
-  bottom: 7%;
+  bottom: 15%;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+.footer a {
+  color: var(--menu);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--primary);
 }
