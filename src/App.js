@@ -12,6 +12,7 @@ import FastPay from "./pages/FastPay";
 import Tuzla from "./pages/Tuzla";
 import Footer from "./components/Footer";
 import BackDrop from "./components/BackDrop";
+import MapPage from "./pages/MapPage";
 
 const App = () => {
   const { token, login, logout, userId } = useAuth();
@@ -30,6 +31,7 @@ const App = () => {
       <>
         <Route path="/" exact element={<MainPage />} />
         <Route path="/fastpay" exact element={<FastPay />} />
+        <Route path="/map" exact element={<MapPage />} />
         <Route path="/tuzla" exact element={<Tuzla />} />
       </>
     );
@@ -49,8 +51,8 @@ const App = () => {
         <main className="App">
           <BackDrop />
           <Routes>{routes}</Routes>
+          <Footer />
         </main>
-        <Footer />
       </Router>
     </AuthContext.Provider>
   );

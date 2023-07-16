@@ -9,7 +9,6 @@ const Tuzla = () => {
   useEffect(() => {
     if (localStorage.getItem("Plate")) {
       setText(localStorage.getItem("Plate"));
-      console.log(text);
     }
   }, [text]);
 

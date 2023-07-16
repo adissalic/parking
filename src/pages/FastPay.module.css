@@ -44,6 +44,7 @@ input {
   width: 60%;
   height: 3%;
   text-align: center;
+  text-transform: uppercase;
 }
 button + button {
   margin-bottom: 40px;
