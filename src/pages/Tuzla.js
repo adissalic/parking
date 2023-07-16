@@ -29,7 +29,7 @@ const Tuzla = () => {
         <div className={classes.options + " options"}>
           <Link to={"sms:+387833513;&body=" + text}>ZONA 0</Link>
           <Link to={"sms:+387833514;&body=" + text}>ZONA 1</Link>
-          <Link to={"sms:+387833515;&body=" + text}>ZONA 2</Link>
+          <Link to={"sms:+387833515:?&body=" + text}>ZONA 2</Link>
         </div>
         <p className="footer">mojparking.ba</p>
       </div>
