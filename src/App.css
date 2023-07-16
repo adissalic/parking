@@ -1,38 +1,85 @@
+:root {
+  --primary: #66d7e0;
+  --secondary: #1c3d52;
+  --menu: #2c5f78;
+  --text-color: #ffffff;
+  --primaryFont: "Lovelo";
+  --footerFont: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body {
+  background-color: var(--primary);
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: var(--footerFont);
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--text-color);
+  margin: auto;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 90%;
+  background-color: var(--secondary);
+  box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.title {
+  position: absolute;
+  top: 7%;
+}
+.options {
+  background-color: var(--secondary);
+  position: absolute;
+  display: flex;
+  flex-flow: wrap column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  margin: auto;
+}
+.options a {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--menu);
+  width: 50%;
+  height: 49%;
+  border: 1px solid var(--secondary);
   color: white;
+  text-decoration: none;
 }
-
-.App-link {
-  color: #61dafb;
+.options a img {
+  height: 20%;
+  color: wheat;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a img {
+  height: 30px;
+}
+.options a:hover {
+  background-color: var(--secondary);
+  border: 1px solid var(--menu);
+}
+.footer {
+  font-family: var(--footerFont);
+  position: absolute;
+  bottom: 7%;
 }
