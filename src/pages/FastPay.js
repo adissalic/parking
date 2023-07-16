@@ -16,7 +16,7 @@ const FastPay = () => {
 
   const savePlate = (e) => {
     localStorage.setItem("Plate", plate);
-    console.log("Saved " + localStorage.getItem("Plate"));
+    alert("Saved " + localStorage.getItem("Plate"));
     isOpen(false);
   };
   return (
