@@ -8,8 +8,10 @@ const Tuzla = () => {
   const [text, setText] = useState("Unesite vaše registarske oznake");
 
   useEffect(() => {
-    setText(localStorage.getItem("Plate"));
-    console.log(text);
+    if(localStorage.getItem("Plate")){
+      setText(localStorage.getItem("Plate"));
+      console.log(text);
+    }
   }, [text]);
 
   return (
