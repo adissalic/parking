@@ -99,10 +99,12 @@ a img {
 /*Google maps styling*/
 .gm-style-iw-d {
   color: var(--secondary);
+  overflow: unset !important;
 }
 
 .gm-style .gm-style-iw-c {
   width: 200px;
+  padding: 0;
   background-color: var(--primary);
   height: fit-content;
   display: flex;
@@ -111,4 +113,3 @@ a img {
 .gm-style-iw.gm-style-iw-c:last-of-type {
   display: none !important;
 }
-
