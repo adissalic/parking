@@ -1,0 +1,14 @@
+.pay {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0px;
+}
+.pay a {
+  width: 150px;
+  height: 30px;
+  margin-bottom: 10px;
+}

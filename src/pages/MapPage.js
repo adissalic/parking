@@ -9,7 +9,9 @@ const MapPage = () => {
   return (
     <div className="main">
       <p className="title">Parking lokacije</p>
-      <div className="options">{isLoaded ? <Map className="mapa" /> : "loading Google Map"}</div>
+      <div className="options">
+        {isLoaded ? <Map className="mapa" /> : "Loading Google Map"}
+      </div>
     </div>
   );
 };

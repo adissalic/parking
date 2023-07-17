@@ -95,6 +95,20 @@ a img {
 .footer a:hover {
   color: var(--primary);
 }
+
+/*Google maps styling*/
 .gm-style-iw-d {
-  color: var(--secondary) !important;
+  color: var(--secondary);
 }
+
+.gm-style .gm-style-iw-c {
+  width: 200px;
+  background-color: var(--primary);
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+.gm-style-iw.gm-style-iw-c:last-of-type {
+  display: none !important;
+}
+
