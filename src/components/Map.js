@@ -300,7 +300,13 @@ function Map() {
   });
   const [clickLocation, isClicked] = useState();
   const [zoom, setZoom] = useState(10);
-  const icon = { url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png" };
+  const [center, setCenter] = useState({
+    lat: 0,
+    lng: 0,
+  });
+  const icon = {
+    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+  };
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
@@ -330,6 +336,7 @@ function Map() {
         ></MarkerF>
       );
       setZoom(15);
+      setCenter(currentPosition);
     }
   };
 
@@ -344,11 +351,11 @@ function Map() {
 
   return (
     <GoogleMap
-      zoom={zoom}
       onLoad={handleOnLoad}
       onClick={() => setActiveMarker(null)}
       mapContainerStyle={{ width: "100vw", height: "100vh" }}
-      center={currentPosition}
+      center={center}
+      zoom={zoom}
     >
       {markers.map(({ id, name, position, zone }) => (
         <MarkerF
