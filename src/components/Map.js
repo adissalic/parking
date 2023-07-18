@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { GoogleMap, InfoWindowF, MarkerF } from "@react-google-maps/api";
 import PayButton from "./PayButton";
 import classes from "./Map.module.css";
-import icon from "../assets/here.svg";
 
 const markers = [
   // ZONE 0
@@ -301,6 +300,7 @@ function Map() {
   });
   const [clickLocation, isClicked] = useState();
   const [zoom, setZoom] = useState(10);
+const icon = { url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" };
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
@@ -320,16 +320,19 @@ function Map() {
       alert("Enable location first");
     } else {
       isClicked(
-        <div className="location">
+        
           <MarkerF
+            key={currentPosition.lat}
             position={currentPosition}
             options={{
+              zIndex: 999,
               icon: icon,
             }}
+          
           ></MarkerF>
-        </div>
+
       );
-      setZoom(20);
+      setZoom(15);
     }
   };
 
