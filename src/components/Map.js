@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoogleMap, InfoWindowF, MarkerF } from "@react-google-maps/api";
-import PayButton from "../components/PayButton";
+import PayButton from "./PayButton";
+import classes from "./Map.module.css";
+import icon from "../assets/here.svg";
 
 const markers = [
   // ZONE 0
@@ -293,12 +295,17 @@ const markers = [
 
 function Map() {
   const [activeMarker, setActiveMarker] = useState(null);
+  const [currentPosition, setPosition] = useState({
+    lat: 0,
+    lng: 0,
+  });
+  const [clickLocation, isClicked] = useState();
+  const [zoom, setZoom] = useState(10);
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
       return null;
     }
-
     setActiveMarker(marker);
   };
 
@@ -307,12 +314,41 @@ function Map() {
     markers.forEach(({ position }) => bounds.extend(position));
     map.fitBounds(bounds);
   };
+  const showMyLocation = () => {
+    console.log(currentPosition);
+    if (currentPosition.lat === 0) {
+      alert("Enable location first");
+    } else {
+      isClicked(
+        <div className="location">
+          <MarkerF
+            position={currentPosition}
+            options={{
+              icon: icon,
+            }}
+          ></MarkerF>
+        </div>
+      );
+      setZoom(20);
+    }
+  };
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setPosition({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      });
+    });
+  }, [currentPosition.lat, currentPosition.lng, zoom]);
 
   return (
     <GoogleMap
+      zoom={zoom}
       onLoad={handleOnLoad}
       onClick={() => setActiveMarker(null)}
       mapContainerStyle={{ width: "100vw", height: "100vh" }}
+      center={currentPosition}
     >
       {markers.map(({ id, name, position, zone }) => (
         <MarkerF
@@ -329,6 +365,12 @@ function Map() {
           )}
         </MarkerF>
       ))}
+      {!currentPosition.lat !== 0 && (
+        <div className={classes.MyLocation} onClick={showMyLocation}>
+          Find my location
+        </div>
+      )}
+      {clickLocation}
     </GoogleMap>
   );
 }
