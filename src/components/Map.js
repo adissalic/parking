@@ -347,7 +347,7 @@ function Map() {
         lng: position.coords.longitude,
       });
     });
-  }, [currentPosition.lat, currentPosition.lng, zoom]);
+  }, [currentPosition.lat, currentPosition.lng, zoom, center]);
 
   return (
     <GoogleMap
