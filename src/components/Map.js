@@ -321,7 +321,6 @@ function Map() {
     map.fitBounds(bounds);
   };
   const showMyLocation = () => {
-    console.log(currentPosition);
     if (currentPosition.lat === 0) {
       alert("Enable location first");
     } else {

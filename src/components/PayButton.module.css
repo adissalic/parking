@@ -5,7 +5,8 @@
   text-align: center;
   align-items: center;
   width: 100%;
-  padding: 30px 0px;
+  padding: 0px;
+  margin-bottom: 30px;
 }
 .pay a {
   width: 150px;
