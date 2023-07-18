@@ -300,7 +300,7 @@ function Map() {
   });
   const [clickLocation, isClicked] = useState();
   const [zoom, setZoom] = useState(10);
-const icon = { url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" };
+  const icon = { url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png" };
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker) {
@@ -320,17 +320,14 @@ const icon = { url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" };
       alert("Enable location first");
     } else {
       isClicked(
-        
-          <MarkerF
-            key={currentPosition.lat}
-            position={currentPosition}
-            options={{
-              zIndex: 999,
-              icon: icon,
-            }}
-          
-          ></MarkerF>
-
+        <MarkerF
+          key={currentPosition.lat}
+          position={currentPosition}
+          options={{
+            zIndex: 999,
+            icon: icon,
+          }}
+        ></MarkerF>
       );
       setZoom(15);
     }
